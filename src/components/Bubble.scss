@@ -3,8 +3,6 @@ $variant: #c2d8f1;
 $background: #00a000;
 
 .bubble {
-  $this: &;
-
   position: relative;
   display: flex;
   flex-direction: column;
