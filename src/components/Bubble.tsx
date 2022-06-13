@@ -21,7 +21,7 @@ const Bubble = ({ content, author, isSender }: BubbleProps) => {
       )}
     >
       <span className="bubble__author">{author}</span>
-      <div
+      <span
         className="bubble__content"
         dangerouslySetInnerHTML={{__html: content}}
       />
