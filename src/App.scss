@@ -1,0 +1,9 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  max-width: 400px;
+  height: 100%;
+  padding: 25px;
+}

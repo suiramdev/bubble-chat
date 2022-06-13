@@ -1,0 +1,50 @@
+.bubble {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  padding: 12px 20px;
+  border-radius: 30px;
+  background: #eeeeee;
+  overflow-wrap: anywhere;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+  }
+
+  &::before {
+    left: -12px;
+    width: 30px;
+    height: 26px;
+    background: #eeeeee;
+    border-radius: 0 0 20px 0;
+  }
+
+  &::after {
+    left: -15px;
+    width: 15px;
+    height: 27px;
+    background: #00a000;
+    border-radius: 0 0 15px 0;
+  }
+
+  &--self {
+    background: #c2d8f1;
+    align-self: flex-end;
+
+    &::before {
+      background: #c2d8f1;
+      left: auto;
+      right: -12px;
+      border-radius: 0 0 0 20px;
+    }
+
+    &::after {
+      left: auto;
+      right: -15px;
+      border-radius: 0 0 0 15px;
+    }
+  }
+}
