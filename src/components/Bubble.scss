@@ -1,50 +1,81 @@
+$neutral: #eeeeee;
+$variant: #c2d8f1;
+$background: #00a000;
+
 .bubble {
-  position: relative;
-  display: inline-block;
-  width: fit-content;
-  padding: 12px 20px;
-  border-radius: 30px;
-  background: #eeeeee;
-  overflow-wrap: anywhere;
+  $this: &;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 
-  &::before {
-    left: -12px;
-    width: 30px;
-    height: 26px;
-    background: #eeeeee;
-    border-radius: 0 0 20px 0;
-  }
+  &__content {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 20px;
+    border-radius: 30px;
+    background: $neutral;
+    overflow-wrap: anywhere;
 
-  &::after {
-    left: -15px;
-    width: 15px;
-    height: 27px;
-    background: #00a000;
-    border-radius: 0 0 15px 0;
-  }
-
-  &--self {
-    background: #c2d8f1;
-    align-self: flex-end;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+    }
 
     &::before {
-      background: #c2d8f1;
-      left: auto;
-      right: -12px;
-      border-radius: 0 0 0 20px;
+      left: -12px;
+      width: 30px;
+      height: 26px;
+      background: $neutral;
+      border-radius: 0 0 20px 0;
     }
 
     &::after {
-      left: auto;
-      right: -15px;
-      border-radius: 0 0 0 15px;
+      left: -15px;
+      width: 15px;
+      height: 27px;
+      background: $background;
+      border-radius: 0 0 15px 0;
     }
   }
+
+  &__author {
+    width: fit-content;
+    font-size: 0.8rem;
+    color: $neutral;
+  }
+
+  &--self {
+    align-items: flex-end;
+
+    #{$this}__author {
+      color: $variant;
+    }
+
+    #{$this}__content {
+      background: $variant;
+      align-self: flex-end;
+
+      &::before {
+        background: $variant;
+        left: auto;
+        right: -12px;
+        border-radius: 0 0 0 20px;
+      }
+
+      &::after {
+        left: auto;
+        right: -15px;
+        border-radius: 0 0 0 15px;
+      }
+    }
+  }
+}
+
+.emoticon {
+  width: 24px;
+  height: 24px;
 }
